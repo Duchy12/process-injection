@@ -10,7 +10,8 @@ LPVOID rBuffer = NULL;
 HMODULE hKernel32 = NULL;
 HANDLE hProcess, hThread = NULL;
 
-wchar_t dllPath[MAX_PATH] = L"C:\\Users\\Duchy\\Desktop\\mogus\\test.dll";
+//hardcoded path to the DLL for example purposes
+wchar_t dllPath[MAX_PATH] = L"PAYLOADDLLPATH";
 size_t dllPathSize = sizeof(dllPath);
 
 int main(int argc, char* argv[])

